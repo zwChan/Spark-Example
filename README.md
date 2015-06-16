@@ -1,7 +1,8 @@
-# A very simple Spark Steaming Example to join two streams.
+# Several very simple Spark Examples.
 
 ## How to use
-  Produce messages to kafka.
+
+### Produce messages to kafka.
 
     <brokerList> is a list of kafka's blocks.
 
@@ -23,7 +24,7 @@
 
     ./SSExample-0.0.1-SNAPSHOT-jar-with-dependencies.jar "lujian:9092" test a 26 -100 100 100
 
-  Consumes messages from one or more topics in Kafka and does stream joining.
+### Consumes messages from one or more topics in Kafka and does stream joining.
 
     <zkQuorum> is a list of one or more zookeeper servers that make quorum
 
@@ -41,7 +42,7 @@
 
      "jason4:2181/kafka-jason" test dest 60 4 2 2
 
-## Use example
+### Used commands of above two examples
   ** Assuming that you has two topic 'test' and 'dest' on kafka. One of the block id is 'lujian:9092' **
 
   ** and zookeeper path of kafka is 'jason4:2181/kafka-jason' **
@@ -58,3 +59,5 @@ spark-submit --class com.yhd.ycache.magic.KafkaWordPairProducer --master local .
 ``
 spark-submit --class com.yhd.ycache.magic.SSExample  --master local[4] ./SSExample-0.0.1-SNAPSHOT-jar-with-dependencies.jar    "jason4:2181/kafka-jason" test dest 60 4 2 2
 ``
+
+
