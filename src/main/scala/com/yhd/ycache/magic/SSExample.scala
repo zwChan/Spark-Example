@@ -216,7 +216,25 @@ object KafkaConsumer extends Serializable{
 
 }
 
-
+/**
+ * A simple example using RandomForest to train a classifier and predict the result of new feature.
+ *
+ * step:
+ * 1. Pick data from hive using Hivecontex;
+ * 2. Transform the data to LablePoint format, which is used by RandomForest algorithm
+ * 3. Split the data into training data and predicting date
+ * 4. Train the classifier mode
+ * 5. Predict the result using the predicting data
+ * 6. Evaluate the preformance of the mode, e.g. Mean Squared Error
+ * <sql> is a string of SQL statement
+ * <useFraction> is fraction to split the data into training data and predicting data, e.g. 0.7 mean 70% is training data.
+ * <numClasses_> is the number of class you try to training
+ * <numTrees_> is the number of ther trees for the RandomForest algorithm
+ * <impurity_> is the impurity for the RandomForest algorithm, e.g. 'gini' or 'entropy'
+ * <maxDepth> is the maximum depth of the tree
+ * <maxBins_> is the maximum number of bins used for splitting features(suggested value: 100)
+ * <default_parallelism_> is how many task should be run at the same time.
+ */
 object Model extends Serializable{
   def main(args: Array[String]) {
     if (args.length<1){
